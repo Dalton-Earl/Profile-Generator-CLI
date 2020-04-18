@@ -1,0 +1,23 @@
+{
+  "name": "profile-generator-cli",
+  "version": "1.0.0",
+  "description": "CLI to generate PDF of Github profiles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dalton-Earl/Profile-Generator-CLI.git"
+  },
+  "author": "Dalton Earl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dalton-Earl/Profile-Generator-CLI/issues"
+  },
+  "homepage": "https://github.com/Dalton-Earl/Profile-Generator-CLI#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^7.1.0"
+  }
+}
