@@ -3,6 +3,8 @@ const fs = require("fs");
 const util = require("util");
 const generateHTML = require("./generateHTML");
 const axios = require("axios");
+const pdf = require('html-pdf');
+const writeFileAsync = util.promisify(fs.writeFile);
 
 function promtUser(){
     const questions = [
@@ -43,15 +45,19 @@ async function init() {
     console.log("running init")
     try{
         const answers = await promtUser();
-        const user = (answers.Username)
+        const user = (answers.Username);
+        const favColor = (answers.color);
         const queryUrl = `https://api.github.com/users/${user}`
         console.log(queryUrl);
         
         axios.get(queryUrl).then(function(res){
             console.log(res.data);
-            const html = generateHTML(res.data);
-        console.log(html);
+            
+        
         })
+        const html = generateHTML(answers);
+        await writeFileAsync("index.html", html);
+
 
         
     }catch(err){
