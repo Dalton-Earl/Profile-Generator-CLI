@@ -25,7 +25,7 @@ const colors = {
   }
 };
 
-function generateHTML(data) {
+function generateHTML(data, profile) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -38,19 +38,21 @@ function generateHTML(data) {
       <body>
       <div class = "wrapper">
         <div class ="container">
-          <div class = "row>
+          <div class = "row">
+          ${profile.login}
 
           </row>
-          <div class = "row>
+          <div class = "row">
           
           </row>
-          <div class = "row>
+          <div class = "row">
           
           </row>
-          <div class = "row>
+          <div class = "row">
           
           </row>
         </div>
+      </div>
 
       
       <style>

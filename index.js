@@ -46,23 +46,29 @@ async function init() {
     try{
         const answers = await promtUser();
         const user = (answers.Username);
-        const favColor = (answers.color);
+        
         const queryUrl = `https://api.github.com/users/${user}`
         console.log(queryUrl);
-        
-        axios.get(queryUrl).then(function(res){
-            console.log(res.data);
+        axios.get(queryUrl).then( function(res){
             
+            profile = res.data;
+            console.log(profile);
+            
+            const html = generateHTML(answers, profile);
+             writeFileAsync("index.html", html);
+             return profile
+            });
+            
+        }
+    
         
-        })
-        const html = generateHTML(answers);
-        await writeFileAsync("index.html", html);
-
-
-        
-    }catch(err){
+    catch(err){
         console.log(err);
-    }
+    }   
+        
 }
+        
+        // const html = generateHTML(answers);
+        // await writeFileAsync("index.html", html)
 
 init();
