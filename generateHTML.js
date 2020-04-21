@@ -39,18 +39,35 @@ function generateHTML(data, profile) {
       <div class = "wrapper">
         <div class ="container">
           <div class = "row">
-          ${profile.login}
+          <div class = photo-header>
+          <img src = "${profile.avatar_url}"> </img>
+          <h1>My name is ${profile.name}</h1>
+          <h2> Currently employed at ${profile.company}</h2>
+          </div>
 
           </row>
+          <main>
           <div class = "row">
-          
-          </row>
+          <h2>${profile.bio}</h2>
+          </div>
           <div class = "row">
-          
-          </row>
+          <div class = "col">
+            <div class = "card">Public repositories ${profile.public_repos} </div>
+          </div>
+          <div class = "col">
+            <div class = "card">Followers ${profile.followers} </div>
+          </div>
+          </div>
           <div class = "row">
+          <div class = "col">
+            <div class = "card">GitHub Stars ${profile.starred_url} </div>
+          </div>
+          <div class = "col">
+            <div class = "card">Following ${profile.following} </div>
+          </div>
           
-          </row>
+          </div>
+          </main>
         </div>
       </div>
 

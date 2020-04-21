@@ -5,7 +5,7 @@ const generateHTML = require("./generateHTML");
 const axios = require("axios");
 const pdf = require('html-pdf');
 const writeFileAsync = util.promisify(fs.writeFile);
-
+// var options = { format: 'Letter' };
 function promtUser(){
     const questions = [
         {
@@ -56,7 +56,13 @@ async function init() {
             
             const html = generateHTML(answers, profile);
              writeFileAsync("index.html", html);
-             return profile
+             
+
+             pdf.create(html).toFile('./profile.pdf', function(err, res) {
+                if (err) return console.log(err);
+                console.log(res); 
+              });
+
             });
             
         }
