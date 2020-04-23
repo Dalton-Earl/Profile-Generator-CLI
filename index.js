@@ -28,17 +28,7 @@ function promtUser(){
     return inquirer.prompt(questions);
 
 }
-//  function apiCall({answers}){
-//      const queryUrl = `https://api.github.com/users/${answers.username}`;
 
-//     axios.get(queryUrl).then(function(res){
-//          console.log(res.data)
-//      })
-// }
-
-function writeToFile(fileName, data) {
- 
-}
 
 
 async function init() {
@@ -74,7 +64,6 @@ async function init() {
         
 }
         
-        // const html = generateHTML(answers);
-        // await writeFileAsync("index.html", html)
+        
 
 init();
